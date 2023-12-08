@@ -1,0 +1,19 @@
+﻿@page "/"
+@using BlazorJS
+
+@inject IJSRuntime JS;
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<button @onclick="Test">Test</button>
+
+@code {
+    private void Test()
+    {
+        JS.InvokeVoidAsync("BlazorJS.Test", "message");
+    }
+}
